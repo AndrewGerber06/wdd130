@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./styles/events.css">
+    <title>Home</title>
+</head>
+<body>
+   <header>
+    <a href="home.html">
+    <img src="./images/updated_logo.jpg" alt="logo_image">
+    </a>
+
+    <nav>
+        <a href="home.html">Home</a>
+        <a href="review.html">Reviews</a>
+        <a href="events.html">Events</a>
+    </nav>
+</header> 
+
+<main id="eventsgrid">
+    <h1>Events</h1>
+    <img src="./images/calendar.jpg" alt="">
+    <div class="div1">
+        <h3>Sub Tiltle</h3>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Itaque repudiandae omnis, officia nulla harum maxime consequuntur et officiis ea eos eius magni maiores perferendis ab hic, sapiente soluta quam possimus molestias perspiciatis accusamus at explicabo sequi! Corrupti dignissimos non consectetur voluptatum repellendus nemo quae eligendi ea aperiam, commodi ullam adipisci. Odio non dignissimos, nemo accusamus nam eaque enim debitis delectus. Alias quod aut beatae, rem magnam provident laboriosam, vitae repellendus qui porro in laborum corrupti eum molestias nobis et quidem reiciendis quasi? Vitae sed excepturi, tenetur exercitationem dolor labore corrupti animi, aperiam, et voluptatibus officiis! Natus ducimus perspiciatis qui vero.</p>
+    </div>
+
+    <h2>Please fill out the form below to have your dream game at your doorsteps</h2>
+    
+    <div id="feedback"></div>
+    <form action="/my-handling-form-page" method="post">
+        <ul>
+         <li>
+           <label for="name">Name:</label>
+           <input type="text" id="name" name="user_name" placeholder="John Smith">
+         </li>
+         <li>
+           <label for="Address">Address</label>
+           <input type="text" id="Address" name="user_address" placeholder="400 S 5th Ave">
+         </li>
+         <li>
+           <label for="title">Game Title</label>
+           <input type="text" id="title" name="user_title" placeholder="Breath of the wild">
+         </li>
+         <li>
+            <label for="ccnum">Credit card number</label>
+            <input type="text" id="ccnum" name="cardnumber" placeholder="1111-2222-3333-4444">
+         </li>
+         <li>
+            <label for="phonenumber">Phone Number</label>
+            <input type="number" id="phonenumber" name="user_phonenumber" placeholder="123-456-7890">
+         </li>
+         <li class="button">
+            <button type="submit">Send your message</button>
+          </li>
+        </ul>
+        </form>
+</main>
+
+<footer>
+    <h3>Super Games &copy; - 2022 - Andrew Gerber </h3>
+    <h3><a href="siteplan.html">Site Plan</a></h3>
+
+    <div>
+        <a href="https://www.facebook.com/">
+            <img src="./images/facebook.png" alt="">
+        </a>
+        <a href="https://www.instagram.com/">
+            <img src="./images/instagram.png" alt="">
+        </a>
+        <a href="https://twitter.com/">
+            <img src="./images/twitter.png" alt="">
+        </a>
+      
+    </div>
+
+</footer>
+<script>
+    // get the feedback div element so we can do something with it.
+    const feedbackElement = document.getElementById('feedback');
+    // get the form so we can read what was entered in it.
+    const formElement = document.forms[0];
+    // add a 'listener' to wait for a submission of our form. When that happens run the code below.
+    formElement.addEventListener('submit', function(e) {
+        // stop the form from doing the default action.
+        e.preventDefault();
+        // set the contents of our feedback element to a message letting the user know the form was submitted successfully. Notice that we pull the name that was entered in the form to personalize the message!
+        feedbackElement.innerHTML = 'Hello '+ formElement.user_name.value +'! Thank you for your message. We will get back with you as soon as possible!';
+        // make the feedback element visible.
+        feedbackElement.style.display = "block";
+        // add a class to move everything down so our message doesn't cover it.
+        document.body.classList.toggle('moveDown');
+    });
+</script>
+</body>
+</html>
